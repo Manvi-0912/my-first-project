@@ -1,10 +1,221 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Project</title>
-  </head>
-  <body>
-    <h1>Hello, I'm Manvi Kumari!</h1>
-    <p>This is my first project on GitHub.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manvi Kumari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f1a;
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo { font-weight: 700; font-size: 20px; color: #a78bfa; }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #a78bfa; }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+    .hero-tag {
+      background: rgba(167,139,250,0.15);
+      color: #a78bfa;
+      border: 1px solid rgba(167,139,250,0.3);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero h1 span { color: #a78bfa; }
+    .hero p {
+      color: #aaa;
+      font-size: 16px;
+      max-width: 500px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .btn {
+      background: #a78bfa;
+      color: white;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn:hover { background: #7c3aed; transform: translateY(-2px); }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-title {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      background: #1a1a2e;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-card:hover { border-color: #a78bfa; transform: translateY(-4px); }
+    .skill-card .icon { font-size: 28px; margin-bottom: 10px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #1a1a2e;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: #a78bfa; transform: translateY(-4px); }
+    .project-card h3 { font-size: 18px; margin-bottom: 10px; }
+    .project-card p { color: #aaa; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+    .project-link {
+      color: #a78bfa;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .contact-box {
+      background: #1a1a2e;
+      border: 1px solid rgba(167,139,250,0.2);
+      border-radius: 16px;
+      padding: 60px;
+      text-align: center;
+    }
+    .contact-box h2 { font-size: 2rem; margin-bottom: 12px; }
+    .contact-box p { color: #aaa; margin-bottom: 32px; }
+    .contact-email {
+      color: #a78bfa;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Manvi Kumari</div>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-tag">👋 Open to Internships</div>
+    <h1>Hi, I'm <span>Manvi Kumari</span><br>CSE Student & Developer</h1>
+    <p>2nd Year Computer Science student from India, building projects and learning every day.</p>
+    <a href="#contact" class="btn">Get In Touch</a>
+  </div>
+
+  <div class="section" id="skills">
+    <div class="section-title">What I Know</div>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="icon">🌐</div>HTML</div>
+      <div class="skill-card"><div class="icon">🎨</div>CSS</div>
+      <div class="skill-card"><div class="icon">⚡</div>JavaScript</div>
+      <div class="skill-card"><div class="icon">🐍</div>Python</div>
+      <div class="skill-card"><div class="icon">☕</div>Java</div>
+      <div class="skill-card"><div class="icon">🔧</div>Git & GitHub</div>
+    </div>
+  </div>
+
+  <div class="section" id="projects">
+    <div class="section-title">What I've Built</div>
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>My Portfolio</h3>
+        <p>Personal portfolio website built with HTML and CSS. My first project on GitHub!</p>
+        <a href="https://github.com/Manvi-0912/my-first-project" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <h3>Coming Soon 🚀</h3>
+        <p>Currently working on my next project. Check back soon!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="contact">
+    <div class="contact-box">
+      <h2>Let's Connect</h2>
+      <p>Looking for internship opportunities. Feel free to reach out!</p>
+      <a href="mailto:kumarimanvi0912@gmail.com" class="contact-email">kumarimanvi0912@gmail.com</a>
+    </div>
+  </div>
+
+  <footer>Built by Manvi Kumari · 2025</footer>
+
+</body>
 </html>
